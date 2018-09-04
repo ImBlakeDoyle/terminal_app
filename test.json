@@ -1,0 +1,31 @@
+[
+    {
+        "name": "blake doyle",
+        "age": 24,
+        "height": 180,
+        "birthday": "2nd November",
+        "favFood": null,
+        "bffl": null,
+        "nemesis": null,
+        "fav_food": null,
+        "interests": null, 
+        "credit_num": null,
+        "exp_date": null,
+        "cvv": null
+    },
+    {
+        "name": "ken shu",
+        "age": 22,
+        "height": 190,
+        "birthday": "1st April",
+        "favFood": null,
+        "bffl": null,
+        "nemesis": null,
+        "fav_food": null,
+        "interests": null, 
+        "credit_num": null,
+        "exp_date": null,
+        "cvv": null
+    }
+]
+

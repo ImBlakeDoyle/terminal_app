@@ -1,0 +1,43 @@
+
+students_array = [
+    {name:'Blake', 
+    age: 24, 
+    birthday:'2nd November', 
+    height: determineHeight,
+    bffl: determineBffl,
+    nemesis: determineNemesis,
+    fav_food: favFood,
+    interests: determineInterests, 
+    credit_num: determineCreditNum,
+    exp_date: determineCreditExp,
+    cvv: determineCreditCvv},
+    
+    {name:'Ken', 
+    age: 22, 
+    birthday:'', 
+    height: determineHeight,
+    bffl: determineBffl,
+    nemesis: determineNemesis,
+    fav_food: favFood,
+    interests: determineInterests, 
+    credit_num: determineCreditNum,
+    exp_date: determineCreditExp,
+    cvv: determineCreditCvv},
+
+    {name:'', 
+    age:, 
+    birthday:'', 
+    height: determineHeight,
+    bffl: determineBffl,
+    nemesis: determineNemesis,
+    fav_food: favFood,
+    interests: determineInterests, 
+    credit_num: determineCreditNum,
+    exp_date: determineCreditExp,
+    cvv: determineCreditCvv},
+]
+
+name = response.gets
+puts students_array.include?(name)
+
+
