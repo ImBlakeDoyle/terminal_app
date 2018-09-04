@@ -12,18 +12,28 @@ studentsArray = JSON.parse(students)
 puts studentsArray
 
 studentsArray.each do |stu_hash|
-instance_variable_set("@#{stu_hash["name"]}", Student.new(stu_hash))
+instance_variable_set("@#{stu_hash["name"].split.map(&:downcase).join('_')}", Student.new(stu_hash))
 end
 
-# puts "Enter student name"
-# userinput = gets.downcase.chomp
 
-# selectedStudent = studentsArray.find {|hashes| hashes["name"] == userinput}
+puts "Enter student name"
+userinput = gets.downcase.chomp
 
-# puts "Name is: #{selectedStudent["name"]}"
-# puts "Age is: #{selectedStudent["age"]}"
-# puts "Birthday is: #{selectedStudent["birthday"]}"
-# puts "Bffl is: #{selectedStudent["bffl"]}"
+favouriteDog = Faker::Dog.breed
+
+nemesis= studentsArray.sample {|hash| hash["name"]}["name"]
+bffl= studentsArray.sample {|hash| hash["name"]}["name"]
+
+selectedStudent = studentsArray.find {|hashes| hashes["name"] == userinput}
+system"clear"
+
+puts "Name is: #{selectedStudent["name"].split.map(&:capitalize).join(' ')}"
+puts "Age is: #{selectedStudent["age"]}"
+puts "Birthday is: #{selectedStudent["birthday"]}"
+puts "Bffl is: #{bffl.split.map(&:capitalize).join(' ')}"
+puts "Favourite dog is: #{favouriteDog}"
+puts "Nemesis is: #{nemesis.split.map(&:capitalize).join(' ')}"
+puts "Interests include: #{selectedStudent["interests"]}"
 
 # class Students
 #     attr_accessor :bffl, :favFood
