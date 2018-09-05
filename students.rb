@@ -26,8 +26,4 @@ class Student
     def self.count
         @name.count
     end
-
-    def studenthash
-        {}
-
  end
