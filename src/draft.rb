@@ -43,7 +43,7 @@ elsif userinput == "help"
     sleep(2)
     exit
 else  #userinput != studentsArray.find {|hashes| hashes["name"] == userinput}
-    puts" it's fucked"
+    puts"Couldn't find you"
     sleep(2)
     exit
 end

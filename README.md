@@ -22,6 +22,8 @@ The methods which represent values for keys in the student hash follow the Json 
 When prompting the user for input, a similar function is used. The application scans through the array of hashes to see if the name the user has submitted is part of the array of hashes. If it returns true, the selectedStudent variable then equals the name which was entered.
 ![selectuser](docs/selectuser.png)
 
+The output for the selected student remains constant for the running session of the app, however once the app is exited and run again, the values for that same selected student are randomised once again.
+![randomise](docs/randomise.png)
 
 ##########Instructions for use: 
 When prompted at the welcome screen, the user can input either a full name of a Coder Academy student, type 'help' to display a list of all students or type 'exit' to leave the application. Once a student name has been entered, fabricated information regarding the student appears and then the user is given the ability to enter in another name to view information for that student, enter 'help' to view the list of students, or enter 'exit' to exit the application.
@@ -51,7 +53,10 @@ Lack of security for the application meaning that if someone were to obtain the 
 
 ##########Complications:
 Certain aspects of reading and writing to a json file has proven to be quite difficult. 
-Trying to give 3 different variables a value based on 1 array and not using the same value more than once for each was also something we were unable to overcome (in the instance of selecting a user name and ensuring that both the bffl & nemesis values were not identical to each other or to the user name).
+
+Fixing one bug seemed to cause even more bugs. At some stages we were working on getting unnecessary features implemented when it wasn't meant to be the main focus.
+
+Initially, trying to give 3 different variables a value based on 1 array and not using the same value more than once for each was also something we were unable to overcome (in the instance of selecting a user name and ensuring that both the bffl & nemesis values were not identical to each other or to the user name), however 
 ![bfflnemesis](docs/bfflnemesis.png)
 
 
