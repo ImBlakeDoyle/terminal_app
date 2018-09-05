@@ -1,4 +1,4 @@
-require_relative 'students.rb'
+#require_relative 'students.rb'
 require 'json'
 require 'faker'
 require 'io/console'
@@ -10,6 +10,7 @@ def determineDog
 end
 # 
 # chooses two different interests at random
+
 def interestsMethod
    interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting", "playing soccer", "singing really badly", "buying clothes they can't afford", '"cooking" toast', "power napping", "lifting heavy things repeatedly", "consuming enough coffee to kill most people"]
    return "#{interestarray.sample(2).join(" and ")}"
@@ -54,9 +55,6 @@ def ageComment
     thecomment = comment[rand(comment.length)]
 end
 
-
-
-
 # determineBffl = "john"
 
 # Read stored information on .json file
@@ -77,13 +75,13 @@ fJSON = File.read('test.json')
 # # name search function
 
 def startScreen
-puts "~~~~~Welcome to the Coder Academy 2018 Student Directory!~~~~~"
-puts ""
-puts ""
-puts "Type the first name and last name of any student to begin"
-puts ""
-puts "For more help, type 'help'"
-puts "To exit, type 'exit'"
+    puts "~~~~~Welcome to the Coder Academy 2018 Student Directory!~~~~~"
+    puts ""
+    puts ""
+    puts "Type the first name and last name of any student to begin"
+    puts ""
+    puts "For more help, type 'help'"
+    puts "To exit, type 'exit'"
 end
 
 
@@ -95,7 +93,10 @@ def help (listofstudents)
     system"clear"
     puts "Here is a list of all available names:"
     puts ""
-    listofstudents.each {|x| puts x["name"].split.map(&:capitalize).join(' ')}
+    listofstudents.each {|x| print x["name"].split.map(&:capitalize).join(' ') + ", "}
+    puts ""
+    puts ""
+    puts ""
     puts ""
     main
 #     puts "Type the first name and last name of any student to begin"
@@ -106,6 +107,7 @@ def main
     loop do
         startScreen
         userinput = gets.downcase.chomp
+        system"clear"
         if @studentsArray.any? {|hashes| hashes["name"] == userinput}
             selectedStudent = @studentsArray.find {|hashes| hashes["name"] == userinput}
             # if userinput == studentsArray.find {|hashes| hashes["name"] == userinput}["name"]
@@ -120,20 +122,23 @@ def main
             puts "Bffl: #{determineBffl(@studentsArray, userinput).split.map(&:capitalize).join(' ')}"
             puts "Nemesis is: #{determineNemesis(@studentsArray, userinput).split.map(&:capitalize).join(' ')}"
             puts "Favourite dog breed: #{determineDog}"
-            puts "Interests: #{interestsMethod}"
+            puts "Likes: #{interestsMethod}"
             puts "Dislikes: #{dislikesMethod}"
             puts ""
             puts "Press anything to return"
             STDIN.getch
+            system"clear"
+        #elsif userinput == 'randomise' 
             
-
         elsif userinput == "exit"
+            File.write('test.json', JSON.pretty_generate(@studentsArray))
             exit
         elsif userinput == "help"
-            puts "here"
             help (@studentsArray)
         else
-            puts "invalid response"
+            puts "Invalid response"
+            sleep(2.5)
+            system"clear"
         end
     end
 end
