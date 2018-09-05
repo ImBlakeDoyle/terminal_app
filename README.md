@@ -56,7 +56,6 @@ We initially thought that we had to use classes, however realised far too late t
 #########Future additions:
 The attempted implementation of classes in this application snowballed us into more and more errors and failures, so there were quite a few additions we were hoping to have implemented, however we were more concerned on getting the bare bones working properly. We would have liked to have made the application more interactive for the user, with more commands added to perform certain tasks such as the ability to create a new student and have them added to the json file whilst the application is running.
 
-
 ![trello](docs/trello.png)
 
 
