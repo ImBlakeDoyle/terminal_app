@@ -30,16 +30,20 @@ def determineDog
 end
 # 
 # chooses two different interests at random
-def interestsmethod
+def interestsMethod
    interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting"]
    return "#{interestarray.sample(2).join(" and ")}"
 end
+
+def dislikesMethod
+    interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting"]
+    return "#{interestarray.sample(2).join(" and ")}"
+ end
 
 def determineHeight
     height = rand(100..300)
 end
 
-#puts "my interests include: #{interestsmethod}"
 
 def determineBffl(bfflArray, studentused) 
     bfflChosen = bfflArray.sample {|hash| hash["name"]} ["name"]
@@ -84,8 +88,8 @@ puts "Height: #{determineHeight}cm"
 puts "Bffl: #{determineBffl(studentsArray, userinput).split.map(&:capitalize).join(' ')}"
 puts "Nemesis is: #{determineNemesis(studentsArray, userinput).split.map(&:capitalize).join(' ')}"
 puts "Favourite dog breed: #{determineDog}"
-puts "Interests: #{interestsmethod}"
-puts "Dislikes: #{dislikes}"
+puts "Interests: #{interestsMethod}"
+puts "Dislikes: #{dislikesMethod}"
 
 # # class Students
 # #     attr_accessor :bffl, :favFood
