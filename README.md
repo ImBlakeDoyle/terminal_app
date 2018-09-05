@@ -13,18 +13,22 @@ To be able to select a student and display information regarding the specific st
 The application is very simple and only has a few commands that are necessary to use, we overthought the entire application from the beginning. The code begins with the three necessary requirements: json, faker and io/console.
 ![require](docs/require.png)
 
+
 Json is used to read the json file containing an array of student hashes and then to parse that file. 
 The methods which represent values for keys in the student hash follow the Json parse. Most of the values used are determined randomly through each method. The help method scans through the array of student hashes and for each hash, finds the values that are stored under the key "name" and prints out those values.
 ![listnames](docs/listnames.png)
 
+
 When prompting the user for input, a similar function is used. The application scans through the array of hashes to see if the name the user has submitted is part of the array of hashes. If it returns true, the selectedStudent variable then equals the name which was entered.
 ![selectuser](docs/selectuser.png)
+
 
 ##########Instructions for use: 
 When prompted at the welcome screen, the user can input either a full name of a Coder Academy student, type 'help' to display a list of all students or type 'exit' to leave the application. Once a student name has been entered, fabricated information regarding the student appears and then the user is given the ability to enter in another name to view information for that student, enter 'help' to view the list of students, or enter 'exit' to exit the application.
 
 ##########Initial brainstorm/outline of application:
 ![workflow](docs/workflow.png)
+
 Create an array of hashes for each student on a .txt file
 
 Create a student class and save each hash in the .txt file as an instance of the class
@@ -49,9 +53,12 @@ Lack of security for the application meaning that if someone were to obtain the 
 Certain aspects of reading and writing to a json file has proven to be quite difficult. 
 Trying to give 3 different variables a value based on 1 array and not using the same value more than once for each was also something we were unable to overcome (in the instance of selecting a user name and ensuring that both the bffl & nemesis values were not identical to each other or to the user name).
 ![bfflnemesis](docs/bfflnemesis.png)
+
+
 Using each hash in the json file to create an instance of a class.
 We initially thought that we had to use classes, however realised far too late that it was not needed. You can see the unnecessary work in the students.rb file.
 ![studentsfile](docs/studentsfile.png)
+
 
 #########Future additions:
 The attempted implementation of classes in this application snowballed us into more and more errors and failures, so there were quite a few additions we were hoping to have implemented, however we were more concerned on getting the bare bones working properly. We would have liked to have made the application more interactive for the user, with more commands added to perform certain tasks such as the ability to create a new student and have them added to the json file whilst the application is running.
