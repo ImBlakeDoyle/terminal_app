@@ -1,7 +1,9 @@
-#require_relative 'students.rb'
 require 'json'
 require 'faker'
 require 'io/console'
+
+fJSON = File.read('test.json')
+@studentsArray = JSON.parse(fJSON)
 
 
 # #randomise data
@@ -58,8 +60,7 @@ end
 # determineBffl = "john"
 
 # Read stored information on .json file
-fJSON = File.read('test.json')
-@studentsArray = JSON.parse(fJSON)
+
 
 #test array is pulling
 #puts studentsArray
@@ -110,11 +111,6 @@ def main
         system"clear"
         if @studentsArray.any? {|hashes| hashes["name"] == userinput}
             selectedStudent = @studentsArray.find {|hashes| hashes["name"] == userinput}
-            # if userinput == studentsArray.find {|hashes| hashes["name"] == userinput}["name"]
-            #studentsArray.any? { |hashes| hashes["name"] == userinput }
-            #if true
-                # selectedStudent = userinput
-            #puts selectedStudent = @studentsArray.find {|hashes| hashes["name"] == userinput}
             system"clear"
             puts "Name: #{selectedStudent["name"].split.map(&:capitalize).join(' ')}"
             puts "Age: #{determineAge} and #{ageComment}"
@@ -125,7 +121,7 @@ def main
             puts "Likes: #{interestsMethod}"
             puts "Dislikes: #{dislikesMethod}"
             puts ""
-            puts "Press anything to return"
+            puts "Press any key to return"
             STDIN.getch
             system"clear"
         #elsif userinput == 'randomise' 
