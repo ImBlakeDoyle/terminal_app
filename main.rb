@@ -3,27 +3,6 @@ require 'json'
 require 'faker'
 
 
-# determineBffl = "john"
-
-# Read stored information on .json file
-students = File.read('test.json')
-studentsArray = JSON.parse(students)
-
-#test array is pulling
-#puts studentsArray
-
-#studentsArray.collect { |hashes| hashes["birthday"] = Faker::Dog.breed}
-#puts studentsArray
-
-#create new instances of student class for each element of json array, with name of class instance equal to firstname_lastname
-# studentsArray.each do |stu_hash|
-# instance_variable_set("@#{stu_hash["name"].split.map(&:downcase).join('_')}", Student.new(stu_hash))
-# end
-
-# # name search function
-puts "Enter student name"
-userinput = gets.downcase.chomp
-
 # #randomise data
 def determineDog
     favouriteDog = Faker::Dog.breed
@@ -31,12 +10,12 @@ end
 # 
 # chooses two different interests at random
 def interestsMethod
-   interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting"]
+   interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting", "playing soccer", "singing really badly", "buying clothes they can't afford", '"cooking" toast', "power napping", "lifting heavy things repeatedly", "consuming enough coffee to kill most people"]
    return "#{interestarray.sample(2).join(" and ")}"
 end
 
 def dislikesMethod
-    interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting"]
+    interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting", "playing soccer", "singing really badly", "buying clothes they can't afford", '"cooking" toast', "power napping", "lifting heavy things repeatedly", "consuming enough coffee to kill most people"]
     return "#{interestarray.sample(2).join(" and ")}"
  end
 
@@ -76,9 +55,32 @@ end
 
 
 
-nemesis= studentsArray.sample {|hash| hash["name"]}["name"]
+# determineBffl = "john"
 
-bffl= studentsArray.sample {|hash| hash["name"]}["name"]
+# Read stored information on .json file
+fJSON = File.read('test.json')
+studentsArray = JSON.parse(fJSON)
+
+#test array is pulling
+#puts studentsArray
+
+#studentsArray.collect { |hashes| hashes["birthday"] = Faker::Dog.breed}
+#puts studentsArray
+
+#create new instances of student class for each element of json array, with name of class instance equal to firstname_lastname
+# studentsArray.each do |stu_hash|
+# instance_variable_set("@#{stu_hash["name"].split.map(&:downcase).join('_')}", Student.new(stu_hash))
+# end
+
+# # name search function
+puts "~~~~~Welcome to the Coder Academy 2018 Student Directory!~~~~~"
+puts ""
+puts ""
+puts "Type the first name and last name of any student to begin"
+puts ""
+puts "For more help, type 'help'"
+userinput = gets.downcase.chomp
+
 
 selectedStudent = studentsArray.find {|hashes| hashes["name"] == userinput}
 system"clear"
@@ -91,21 +93,7 @@ puts "Favourite dog breed: #{determineDog}"
 puts "Interests: #{interestsMethod}"
 puts "Dislikes: #{dislikesMethod}"
 
-# # class Students
-# #     attr_accessor :bffl, :favFood
-# #     def initialize name, age
 
 
-# ###Sorts students by oldest###
-# # def findOldestStudent
-# #     findOldest = studentsArray.sort_by {|hashes| hashes["age"]}.reverse
-# #     for hashes in findOldest
-# #     puts "#{hashes["name"]} is #{hashes["age"]} years old"
-# #     end
-# # end
 
 
-# #puts selectedStudent
-# # puts "Name: #{selectedStudent["name"]}"
-# # puts "Age: #{selectedStudent["age"]}"
-# # puts "Birthday: #{selectedStudent["birthday"]}"

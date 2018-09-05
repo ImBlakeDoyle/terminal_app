@@ -1,84 +1,252 @@
 [
-    {
-        "name": "blake doyle",
-        "age": 24,
-        "height": 180,
-        "birthday": "2nd November"
-    },
-    {
-        "name": "ken shu",
-        "age": 22,
-        "height": 190,
-        "birthday": "1st April"
-    },
-    {
-        "name": "luigino de leon"
-    },
-    {
-        "name": "veomany khammarath"
-    },
-    {
-        "name": "theodore chuang"
-    },
-    {
-        "name": "adam demirel"
-    },
-    {
-        "name": "natasha munasinghe"
-    },
-    {
-        "name": "hamish lees"
-    },
-    {
-        "name": "santosh poudyal"
-    },
-    {
-        "name": "ryan sickle"
-    },
-    {
-        "name": "scott o'dea"
-    },
-    {
-        "name": "allan gao"
-    },
-    {
-        "name": "ivan ran"
-    },
-    {
-        "name": "tyson hofstetter"
-    },
-    {
-        "name": "david armor"
-    },
-    {
-        "name": "carl gray"
-    },
-    {
-        "name": "david ramsdale"
-    },
-    {
-        "name": "mike mccalum"
-    },
-    {
-        "name": "ghalip yakob"
-    },
-    {
-        "name": "william francis"
-    },
-    {
-        "name": "jessica alves"
-    },
-    {
-        "name": "steven vi"
-    },
-    {
-        "name": "sinan canselen"
-    },
-    {
-        "name": "shakti gurung"
-    },
-    {
-        "name": "james duong"
-    }
+  {
+    "name": "blake doyle",
+    "age": null,
+    "height": null,
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null
+  },
+  {
+    "name": "ken shu",
+    "age": null,
+    "height": null,
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null
+  },
+  {
+    "name": "luigino de leon",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "veomany khammarath",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "theodore chuang",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "adam demirel",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "natasha munasinghe",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "hamish lees",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "santosh poudyal",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "ryan sickle",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "scott o'dea",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "allan gao",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "ivan ran",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "tyson hofstetter",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "david armor",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "carl gray",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "david ramsdale",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "mike mccalum",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "ghalip yakob",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "william francis",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "jessica alves",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "steven vi",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "sinan canselen",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "shakti gurung",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  },
+  {
+    "name": "james duong",
+    "interests": null,
+    "dislikes": null,
+    "bffl": null,
+    "nemesis": null,
+    "dog": null,
+    "age": null,
+    "height": null
+  }
 ]
-
