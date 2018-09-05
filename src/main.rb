@@ -9,23 +9,6 @@ fJSON = File.read('test.json')
 
 ############################# list of methods ######################################
 
-# welcome landing page
-def startScreen
-    system 'clear'
-    puts "######################################################################"
-    puts "#                                                                    #"
-    puts "#   ~~~~~Welcome to the Coder Academy 2018 Student Directory!~~~~~   #"
-    puts "#                                                                    #"
-    puts "######################################################################"
-    puts ""
-    puts ""
-    puts "Type the first name and last name of any student to begin"
-    puts ""
-    puts "For a list of students, type 'help'"
-    puts "To randomise all student data, enter 'randomise!'"
-    puts "To exit, type 'exit':"
-end
-
 # looped home page
 def homeScreen
     puts "######################################################################"
