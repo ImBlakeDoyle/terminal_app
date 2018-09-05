@@ -20,25 +20,31 @@ puts ""
 puts "For more help, type 'help'"
 
 userinput = gets.downcase.chomp
-# if userinput == studentsArray.find {|hashes| hashes["name"] == userinput}["name"]
-if studentsArray.any? {|hashes| hashes["name"] == userinput}
-  studentindex = studentsArray.index {|hashes| hashes["name"] == userinput}
-  puts Student.all[studentindex].name
-elsif userinput == "help"
-    Student.studentlist
-else puts "wrong input"
-end
-# if studentsArray.any? {|hashes| hashes["name"] == userinput}
-# selectedStudent = studentsArray.find {|hashes| hashes["name"] == userinput}
+# # if userinput == studentsArray.find {|hashes| hashes["name"] == userinput}["name"]
+# if Student.student_hashes.any? {|hashes| hashes["name"] == userinput}
+#     # which array index no is this student
+#   studentindex = Student.student_hashes.index {|hashes| hashes["name"] == userinput}
+#   puts Student.all[studentindex].name
 # elsif userinput == "help"
-#     puts "help"
-#     sleep(2)
-#     exit
-# else  #userinput != studentsArray.find {|hashes| hashes["name"] == userinput}
-#     puts" it's fucked"
-#     sleep(2)
-#     exit
+#     Student.studentlist
+# else puts "wrong input"
 # end
 
-# puts selectedStudent["name"]
-# puts selectedStudent["age"]
+# puts "age is: #{Student.all["age"]}"
+if Student.student_hashes.any? {|hashes| hashes["name"] == userinput}
+selectedStudent = Student.student_hashes.find {|hashes| hashes["name"] == userinput}
+system"clear"
+    puts "Name: #{selectedStudent["name"].split.map(&:capitalize).join('_')}"
+    puts "Age: #{selectedStudent["age"]}"
+    puts "Height: #{selectedStudent["height"]}"
+
+elsif userinput == "help"
+    puts "help"
+    sleep(2)
+    exit
+else  #userinput != studentsArray.find {|hashes| hashes["name"] == userinput}
+    puts" it's fucked"
+    sleep(2)
+    exit
+end
+

@@ -39,9 +39,18 @@ class Student
         def student_hashes
             @student_hashes
         end
-        
+
         def studentlist
             @student_hashes.each {|x| puts x["name"].split.map(&:capitalize).join(' ')}
+        end
+
+        def determineBffl(bfflArray, studentused) 
+            bfflChosen = bfflArray.sample {|hash| hash["name"]} ["name"]
+            if bfflChosen.downcase == studentused 
+                bfflChosen = bfflArray.sample {|hash| hash["name"]} ["name"]
+            else
+                return bfflChosen
+            end
         end
     end
 

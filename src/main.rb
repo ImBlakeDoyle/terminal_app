@@ -1,6 +1,7 @@
 require_relative 'students.rb'
 require 'json'
 require 'faker'
+require 'io/console'
 
 
 # #randomise data
@@ -17,7 +18,7 @@ end
 def dislikesMethod
     interestarray = ["sleeping", "eating", "breathing", "crying", "having an existential crisis", "overthinking", "rock climbing", "fishing", "reading up on 'self'", "yelling at children", "eating crayons", "finger painting", "playing soccer", "singing really badly", "buying clothes they can't afford", '"cooking" toast', "power napping", "lifting heavy things repeatedly", "consuming enough coffee to kill most people"]
     return "#{interestarray.sample(2).join(" and ")}"
- end
+end
 
 def determineHeight
     height = rand(100..300)
@@ -60,7 +61,7 @@ end
 
 # Read stored information on .json file
 fJSON = File.read('test.json')
-studentsArray = JSON.parse(fJSON)
+@studentsArray = JSON.parse(fJSON)
 
 #test array is pulling
 #puts studentsArray
@@ -82,6 +83,7 @@ puts ""
 puts "Type the first name and last name of any student to begin"
 puts ""
 puts "For more help, type 'help'"
+puts "To exit, type 'exit'"
 end
 
 
@@ -95,32 +97,45 @@ def help (listofstudents)
     puts ""
     listofstudents.each {|x| puts x["name"].split.map(&:capitalize).join(' ')}
     puts ""
-    puts "Type the first name and last name of any student to begin"
-    gets.downcase.chomp
+    main
+#     puts "Type the first name and last name of any student to begin"
+#     gets.downcase.chomp
 end
 
-loop do
-startScreen
-userinput = gets.downcase.chomp
-if userinput == studentsArray.find {|hashes| hashes["name"] == userinput}["name"]
-#studentsArray.any? { |hashes| hashes["name"] == userinput }
-#if true
-    # selectedStudent = userinput
-    puts selectedStudent = studentsArray.find {|hashes| hashes["name"] == userinput}
-puts "Name: #{selectedStudent["name"].split.map(&:capitalize).join(' ')}"
-puts "Age: #{determineAge} and #{ageComment}"
-puts "Height: #{determineHeight}cm"
-puts "Bffl: #{determineBffl(studentsArray, userinput).split.map(&:capitalize).join(' ')}"
-puts "Nemesis is: #{determineNemesis(studentsArray, userinput).split.map(&:capitalize).join(' ')}"
-puts "Favourite dog breed: #{determineDog}"
-puts "Interests: #{interestsMethod}"
-puts "Dislikes: #{dislikesMethod}"
-puts ""
-puts "Type 'back' to go back to start screen or 'exit' to exit"
-userinput = gets.downcase.chomp
-elsif userinput == "help"
-    userinput = help(studentsArray)
-else puts "invalid response"
+def main
+    loop do
+        startScreen
+        userinput = gets.downcase.chomp
+        if @studentsArray.any? {|hashes| hashes["name"] == userinput}
+            selectedStudent = @studentsArray.find {|hashes| hashes["name"] == userinput}
+            # if userinput == studentsArray.find {|hashes| hashes["name"] == userinput}["name"]
+            #studentsArray.any? { |hashes| hashes["name"] == userinput }
+            #if true
+                # selectedStudent = userinput
+            #puts selectedStudent = @studentsArray.find {|hashes| hashes["name"] == userinput}
+            system"clear"
+            puts "Name: #{selectedStudent["name"].split.map(&:capitalize).join(' ')}"
+            puts "Age: #{determineAge} and #{ageComment}"
+            puts "Height: #{determineHeight}cm"
+            puts "Bffl: #{determineBffl(@studentsArray, userinput).split.map(&:capitalize).join(' ')}"
+            puts "Nemesis is: #{determineNemesis(@studentsArray, userinput).split.map(&:capitalize).join(' ')}"
+            puts "Favourite dog breed: #{determineDog}"
+            puts "Interests: #{interestsMethod}"
+            puts "Dislikes: #{dislikesMethod}"
+            puts ""
+            puts "Press anything to return"
+            STDIN.getch
+            
+
+        elsif userinput == "exit"
+            exit
+        elsif userinput == "help"
+            puts "here"
+            help (@studentsArray)
+        else
+            puts "invalid response"
+        end
+    end
 end
 
 # selectedStudent = studentsArray.find {|hashes| hashes["name"] == userinput}
@@ -142,7 +157,6 @@ end
 # else puts "incorrect response"
 # end
 # startScreen
-end
 
 
 # userinput = "blake doyle"
@@ -150,4 +164,4 @@ end
 
 
 
-
+main
